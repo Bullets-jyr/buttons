@@ -18,10 +18,12 @@ class HomeScreen extends StatelessWidget {
             ElevatedButton(
               onPressed: () {},
               style: ButtonStyle(
+                // 모든 상태에서 동일하게 적용
                 backgroundColor: MaterialStateProperty.all(
                   Colors.black,
                 ),
                 // resolveWith: 다른 속성에서도 사용할 수 있습니다.
+                // 상태에 따라서 다른 style 적용
                 foregroundColor: MaterialStateProperty.resolveWith(
                   // MaterialState
                   // hovered - 호버링 상태 (마우스 커서를 올려놓은 상태)
@@ -37,6 +39,7 @@ class HomeScreen extends StatelessWidget {
                       return Colors.white;
                     }
 
+                    // return null; 기본으로 정해져있는 default값
                     return Colors.red;
                   },
                 ),
